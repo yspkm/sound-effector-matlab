@@ -26,7 +26,7 @@ function get_cmp_fig(n, fs, original_signal, modified_signal)
 
     figure
     subplot(2, 1, 2);
-    semilogx(n(1, 1:fs), abs(fft(mdf_x(1:fs))));
+    semilogx(n(1, 1:fs), abs(fft(mdf_x(1:fs))), '.');
     temp = abs(fft(mdf_x(1:fs)));
     axis([0, fs, min(temp), max(temp)+10]);
     title('Processed Sound in Frequency Domain');
@@ -34,7 +34,7 @@ function get_cmp_fig(n, fs, original_signal, modified_signal)
     ylabel('Processed Sound');
 
     subplot(2, 1, 1);
-    semilogx(n(1, 1:fs), abs(fft(x(1:fs))));
+    semilogx(n(1, 1:fs), abs(fft(x(1:fs))), '.');
     axis([0, fs, min(temp), max(temp)+10]);
     title('Original sound in Frequency Domain');
     xlabel('DT Index');
